@@ -19,4 +19,4 @@ app.get( "/", function(req,res){
 //app.post("/updateOrder", OrderHandler.updateOrder,  OrderHandler.errorHandling);
 //app.post("/removeOrder", OrderHandler.removeOrder,  OrderHandler.errorHandling);
 
-app.listen(3006);
+app.listen(80);
