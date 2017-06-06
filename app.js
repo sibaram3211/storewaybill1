@@ -19,5 +19,5 @@ app.get( "/", function(req,res){
 //app.post("/saveOrder", OrderHandler.saveOrder,  OrderHandler.errorHandling);
 //app.post("/updateOrder", OrderHandler.updateOrder,  OrderHandler.errorHandling);
 //app.post("/removeOrder", OrderHandler.removeOrder,  OrderHandler.errorHandling);
-var port = process.env.port || 3000;
+var port = process.env.PORT || 3000;
 app.listen(port);
