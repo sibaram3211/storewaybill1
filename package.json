@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": ""
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,7 @@
   "bugs": {
     "url": "https://github.com/sibaram3211/storewaybill/issues"
   },
-  "homepage": "https://github.com/sibaram3211/storewaybill#readme"
+  "engines": {
+    "node": "4.0.0"
+  }
 }
