@@ -4,6 +4,7 @@ var join = require("path").join;
 var bodyParser = require("body-parser");
 var app = express();
 var pubDir = join(__dirname,"/public");
+
 app.use( bodyParser.urlencoded( {extended:true} ) );
 app.use( bodyParser.json() );
 app.use( express.static(pubDir) );
@@ -18,5 +19,5 @@ app.get( "/", function(req,res){
 //app.post("/saveOrder", OrderHandler.saveOrder,  OrderHandler.errorHandling);
 //app.post("/updateOrder", OrderHandler.updateOrder,  OrderHandler.errorHandling);
 //app.post("/removeOrder", OrderHandler.removeOrder,  OrderHandler.errorHandling);
-
-app.listen(80);
+var port = process.env.port || 3000;
+app.listen(port);
