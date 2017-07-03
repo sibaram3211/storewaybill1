@@ -39,5 +39,6 @@ app.post("/getWaybillsByCriteria", WaybillHandler.getWaybillsByCriteria);
 app.post("/removeWaybill", WaybillHandler.removeWaybill);
 app.post("/updateWaybill", WaybillHandler.updateWaybill);
 app.get("/getWaybillByInvoice", WaybillHandler.getWaybillByInvoice);
-var port = 3006;
+var port = process.env.PORT || 3000;
+//var port = 3006;
 app.listen(port);
