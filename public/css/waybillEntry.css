@@ -1,0 +1,192 @@
+html{
+  padding: 0;
+  margin: 0;
+}
+body{
+  padding: 0;
+  margin: 0;
+  font-family: Verdana, sans-serif;
+  font-size: 13px;
+}
+.EntryForm{
+  width:90%;
+  margin-top: 11px;
+}
+.header{
+  height:7%;
+  width:100%;
+  background-color: rgba(9, 122, 251, 0.93);
+}
+
+.title{
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 15px;
+  color: white;
+}
+
+.mainController{
+  height: 100%;
+  width:100%;
+}
+.download{
+  clear: both;
+  height: 0px;
+  width: 200px;
+  cursor: pointer;
+  margin-top: 4%;
+  margin-left: 30%;
+}
+.xController{
+  width:72%;
+  height:90%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.listContent{
+  margin-top: 0.6%;
+}
+.left{
+  float:left
+}
+.listTemp{
+  margin-left:1%;
+  margin-top:4%;
+}
+.iconButton{
+  height:25px;
+  width:30px;
+  cursor: pointer;
+}
+.waybillListAllignment{
+  width:20%;
+  height:30px;
+}
+.lastAllign{
+  width:22%;
+  height:30px;
+}
+.actionItemsAllign{
+  margin-right:4%;
+}
+.waybillListHeadingElement{
+  color:#0b39fd;
+  font-weight: bold;
+}
+.clearLeft{
+  clear: both;
+}
+.searchLabel{
+  padding-right:6px;
+}
+.searchDiv{
+  width:94%;
+  padding-top: 10px;
+  padding-left: 12px;
+}
+.invoiceWise{
+  width:40%;
+  margin-left: 20%;
+}
+.label{
+  font-family: Verdana, sans-serif;
+  font-size: 13px;
+  margin-bottom: 5px;
+  /*font-weight: bold;*/
+}
+.formContent{
+  margin-bottom: 10px;
+}
+input[name="invoiceNumber"],
+input[name="waybillNumber"],
+input[name="remark"]{
+  width: 20%;
+  height: 22px;;
+  border: 1px blue solid;
+  font-family: Verdana, sans-serif;
+  font-size: 14px;
+  padding-left: 6px;
+}
+input[name="listInvoice"],
+input[name="listWaybillNum"],
+input[name="listRemark"]{
+  width: 92%;
+  height: 20px;
+  /*border: 1px blue solid;*/
+  font-family: Verdana, sans-serif;
+  font-size: 13px;
+  padding-left: 6px;
+}
+input[name="listInvoice"].inputErr{
+  border: solid red 2px;
+}
+input[name="listWaybillNum"].inputErr{
+  border: solid red 2px;
+}
+.saveButton{
+  margin-left:51px;
+}
+button[name="save"]{
+  width:120px;
+  height:30px;
+}
+.has-error{
+  margin-top:4px;
+  font-family: Verdana, sans-serif;
+  font-size: 14px;
+  color: red;
+}
+.overlay{
+  z-index: 5000;
+  background-color: black;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  opacity: 0.81;
+}
+.waitText{
+  margin-top: 16%;
+  margin-left: 42%;
+  font-size: 15px;
+}
+.left{
+  float:left;
+}
+.settingMenu{
+  position: relative;
+  padding: 8px;
+  font-size: 11px;
+  cursor: pointer;
+}
+.userSettings{
+  z-index: 100;
+  position: absolute;
+  background-color: #064682;
+  height: 30px;
+  width: 70px;
+  border-radius:1px;
+  margin-left: 0%;
+  color: white;
+}
+.accountMenuIcon{
+  height:16px;
+  width:16px;
+  cursor: pointer;
+}
+.welcomeUser{
+  margin-left: 70%;
+  color:white;
+  padding-top: 12px;
+  padding-right: 5px;
+  font-size: 12px;
+}
+.userMenu{
+  padding-top:13px;
+}
+.button{
+  margin-top:30px;
+  margin-left: 25%;
+}

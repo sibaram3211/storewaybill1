@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../css/waybillEntry.css" / >
+    <link rel="stylesheet" href="../css/waitingOverlay.css" />
+    <script type="text/javascript" src="../config/config.js"> </script>
+    <script type="text/javascript" src="../js/lib/angular.js"> </script>
+    <script type="text/javascript" src="../js/app/demoapp.js"> </script>
+  </head>
+  <body ng-app="demoApp">
+    <div class="mainController" ng-controller="mainController">
+      <div ng-controller="headerController">
+        <div ng-include="'views/header.html'"></div>
+      </div>
+      <div class="xController left" ng-controller="xController">
+        <!-- search div element starts here -->
+        <div name="searchDiv" class="searchDiv">
+            <!-- search by date criteria starts here-->
+            <div name="dateWise left">
+                <div class="searchLabel left"> Get waybills</div>
+                <div class="criteria left">
+                  <select name="department" ng-model="searchCriteria.dept" >
+                      <option value="02">02</option>
+                      <option value="03">03</option>
+                  </select>
+                </div>
+                <div class="criteria left">
+                    <select name="search" ng-model="searchCriteria.opt" >
+                      <option value="TD">Today</option>
+                      <option value="YD">Yesterday</option>
+                      <option value="BYD">Before Yesterday</option>
+                    </select>
+                </div>
+                <div class="go left">
+                  <button ng-click="getWaybillsByCriteria()">Go</button>
+                </div>
+            </div>
+            <!-- search by date criteria  ends here -->
+            <!-- search by invoice number starts here-->
+            <div name="invoiceWise" class="invoiceWise left">
+              <div class="searchLabel left"><span>Invoice Number</span></div>
+              <div class="left">
+                <input type="text" name="invNumber" ng-model="invNumber"/>
+              </div>
+              <div class="go">
+                <button ng-click="getWaybillByInvoice()">Go</button>
+              </div>
+            </div>
+            <!-- search by invoice number ends here-->
+            <!-- download link-->
+            <div ng-show="isDownload" class="download" ng-click="downloadXlxc()">
+              <button ng-click="downloadXlsx()">Download xlsx File</button>
+            </div>
+            <!-- end of download link -->
+
+            <div class="listTemp" ng-include="waybillsTemp">
+
+            </div>
+        </div>
+        <!-- search div ends here -->
+      </div>
+      <div class="EntryForm" ng-controller="yController">
+        <div ng-include="waitOverlay"></div>
+        <form name="waybillForm">
+          <div class="formContent">
+            <div class="label">{{labels.invNum}}</div>
+            <input type="text"  name="invoiceNumber" ng-blur="formatInvoice(waybillForm, 'invoiceNumber')"  ng-focus="plainInvoice(waybillForm, 'invoiceNumber')"   ng-keydown="checkInvoice($event)" ng-model="waybill.invoiceNumber" ng-required="true"/>
+            <div class="has-error" ng-show="hasError(waybillForm, 'invoiceNumber')">Invoice Number Required</div>
+          </div>
+          <div class="formContent">
+            <div class="label">{{labels.waybill}}</div>
+            <input type="text" name="waybillNumber" ng-model="waybill.waybillNumber" ng-blur="checkWaybillNumber(waybillForm, 'waybillNumber')" ng-required="true"/>
+            <div class="has-error" ng-show="hasError(waybillForm, 'waybillNumber')"> Waybill Number Required </div>
+          </div>
+          <div class="formContent">
+            <div class="label">{{labels.remark}}</div>
+            <input type="text" name="remark" ng-model="waybill.remark" />
+          </div>
+          <div class="saveButton">
+            <button name="save" ng-click="saveWaybill(waybillForm)">{{labels.save}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

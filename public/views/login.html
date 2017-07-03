@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="../css/login.css"/>
+    <link rel="stylesheet" href="../css/header.css"/>
+    <script type="text/javascript" src="../config/config.js"> </script>
+    <script type="text/javascript" src="../js/lib/angular.js"> </script>
+    <script type="text/javascript" src="../js/app/loginApp.js"> </script>
+  </head>
+  <body ng-app="loginApp">
+    <div ng-controller="headerController">
+      <div ng-include="'views/header.html'"> </div>
+    </div>
+    <div class="loginForm" ng-controller="loginController" name="loginForm">
+      <form name="loginForm">
+        <div class="formField">
+          <div class="labelField"> UserName </div>
+          <div><input type="text" ng-model="user.userId" name="userName" /></div>
+        </div>
+        <div>
+          <div class="labelField"> Password </div>
+          <div><input type="password" ng-model="user.password" name="password" /></div>
+        </div>
+        <div class="labelField button">
+          <button name="login" ng-click="login()">Login</button>
+        </div>
+        <div class="labelField button">
+          <button name="login" ng-click="addUsers()">Add Users</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

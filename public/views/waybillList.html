@@ -1,0 +1,51 @@
+<div>
+  <div class="listHeading clearLeft">
+    <div class="left waybillListAllignment waybillListHeadingElement">
+      <span>Invoice Number</span>
+    </div>
+    <div class="left waybillListAllignment waybillListHeadingElement">
+      <span>Waybill Number</span>
+    </div>
+    <div class="left waybillListAllignment waybillListHeadingElement">
+      <span>Create Date</span>
+    </div>
+    <div class=" waybillListHeadingElement">
+      <span>Remark</span>
+    </div>
+  </div>
+  <div class="listContent clearLeft" ng-repeat="waybill in waybills">
+    <div class="left waybillListAllignment">
+      <span ng-show="!waybill.isEditing">{{waybill.cust_branch + "-" + waybill.invoiceNumber}}</span>
+      <span ng-show="waybill.isEditing"><input type="text" name="listInvoice" ng-class="getInvalidClass(waybill, 'invoice')" ng-model="waybill.edit.fullInvoice" ng-focus="plainInvoice(waybill)" ng-blur="formatInvoice(waybill)" ng-keydown="checkInvoive($event, waybill.edit.fullInvoice)" /></span>
+    </div>
+    <div class="left waybillListAllignment">
+      <span ng-show="!waybill.isEditing">{{waybill.waybillNumber}}</span>
+      <span ng-show="waybill.isEditing"><input type="text" ng-class="getInvalidClass(waybill, 'waybill')" name="listWaybillNum" ng-model="waybill.edit.waybillNumber" ng-blur="checkWaybillNumber(waybill)"/></span>
+    </div>
+    <div class="left waybillListAllignment">
+      <span >{{waybill.createdDateTime | date }}</span>
+    </div>
+    <div class="left lastAllign">
+      <span ng-show="!waybill.isEditing">{{waybill.remark}}</span>
+      <span ng-show="waybill.isEditing"><input type="text" name="listRemark" ng-model="waybill.edit.remark"/></span>
+    </div>
+    <div class="actions">
+      <div ng-show="!waybill.isEditing">
+        <div class="left actionItemsAllign iconButton" ng-click="onEdit(waybill)">
+          <img  src="images/edit.png" alt="Edit"/>
+        </div>
+        <div class="left iconButton" ng-click="remove(waybill)">
+          <img  src="images/delete.png" alt="Delete"/>
+        </div>
+      </div>
+      <div ng-show="waybill.isEditing">
+        <div class="left actionItemsAllign iconButton" ng-click="update(waybill)">
+          <img  src="images/save.png" alt="save"/>
+        </div>
+        <div class="left iconButton" ng-click="onCancel(waybill)">
+          <img  src="images/cancel.png" alt="cancel"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

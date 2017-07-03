@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="../css/header.css" />
+<div  class="header">
+  <div class="left title">
+    <span>{{labels.siteName}}</span>
+  </div>
+  <div ng-show="isSession">
+    <div class="left welcomeUser">
+      <span>{{labels.greeting}}&nbsp;&nbsp;</span><span>{{userName}}</span>
+    </div>
+    <div  class="left userMenu" ng-mouseover="showMenu()" ng-mouseleave="closeMenu()">
+      <div class="accountMenuIcon">
+        <img  src="images/drop-down-menu.png" />
+      </div>
+      <div ng-show="showUserMenu" class="userSettings">
+        <div class="settingMenu" ng-click="signout()">
+          <span>{{labels.signout}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
