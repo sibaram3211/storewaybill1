@@ -20,8 +20,8 @@ app.use( session({
   httpOnly: false,
   saveUninitialized: true,
   cookie: {
-    maxAge: 1*60*1000,
-    expires: 1*60*1000
+    maxAge: 20*60*1000,
+    expires: 20*60*1000
   }
 }));
 app.get("/waybill", CheckUserAuthentication.confirmAutho);
